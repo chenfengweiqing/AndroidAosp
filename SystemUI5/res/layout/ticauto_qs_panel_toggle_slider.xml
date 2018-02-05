@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/top_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/navigation_distance_unit_size" />
+
+    <com.android.systemui.statusbar.TicautoToggleSeekBar
+        android:id="@+id/slider"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/title"
+        android:layout_below="@id/top_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/toggle_seek_bar_margin_left"
+        android:layout_marginRight="@dimen/toggle_seek_bar_margin_right"
+        android:maxHeight="@dimen/seek_bar_width"
+        android:minHeight="@dimen/seek_bar_width"
+        android:paddingBottom="@dimen/toggle_seek_bar_padding_bottom"
+        android:paddingTop="@dimen/toggle_seek_bar_padding_top"
+        android:splitTrack="false"
+        android:thumbOffset="@dimen/seek_bar_thumb_offset" />
+
+</merge>

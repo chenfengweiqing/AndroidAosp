@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.statusbar.TicautoStatusBarView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ticauto_status_bar_height"
+            android:background="#000000"
+            android:gravity="top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ticauto_status_bar_height"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/ticauto_status_bar_button_height"
+                    android:src="@drawable/backgroundpattern"
+                    android:layout_gravity="right"/>
+
+                <ImageView
+                    android:id="@+id/bottom_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ticauto_status_bar_divide"
+                    android:background="#66ffffff" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/home_select_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/home_select_padding"
+                android:background="@drawable/bglight_active" />
+
+            <ImageView
+                android:id="@+id/app_list_select_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/app_list_select_padding"
+                android:background="@drawable/bglight_active" />
+
+            <ImageView
+                android:id="@+id/vehicle_select_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/vehicle_select_padding"
+                android:background="@drawable/bglight_active" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ticauto_status_bar_button_height">
+
+                <ImageView
+                    android:id="@+id/home_radio"
+                    android:layout_width="@dimen/ticauto_status_bar_button_width"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:scaleType="center"
+                    android:src="@drawable/home_active" />
+
+                <ImageView
+                    android:id="@+id/divide_one"
+                    android:layout_width="@dimen/ticauto_status_bar_divide"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/home_radio"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/topbar_verticalline" />
+
+                <ImageView
+                    android:id="@+id/app_list_radio"
+                    android:layout_width="@dimen/ticauto_status_bar_button_width"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/divide_one"
+                    android:gravity="center"
+                    android:scaleType="center"
+                    android:src="@drawable/applist_inactive" />
+
+                <ImageView
+                    android:id="@+id/divide_two"
+                    android:layout_width="@dimen/ticauto_status_bar_divide"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/app_list_radio"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/topbar_verticalline" />
+
+                <ImageView
+                    android:id="@+id/vehicle_radio"
+                    android:layout_width="@dimen/ticauto_status_bar_button_width"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/divide_two"
+                    android:gravity="center"
+                    android:scaleType="center"
+                    android:src="@drawable/carinfo_inactive" />
+
+                <ImageView
+                    android:id="@+id/divide_three"
+                    android:layout_width="@dimen/ticauto_status_bar_divide"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/vehicle_radio"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/topbar_verticalline" />
+
+                <ImageView
+                    android:id="@+id/navigation_icon"
+                    android:layout_width="@dimen/navigation_icon_size"
+                    android:layout_height="@dimen/navigation_icon_size"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/navigation_icon_margin_left"
+                    android:layout_toRightOf="@+id/divide_three"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/navigation_distance_margin_left"
+                    android:layout_toRightOf="@+id/navigation_icon"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/navigation_distance_padding_bottom">
+
+                    <TextView
+                        android:id="@+id/navigation_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/navigation_distance_size"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/navigation_distance_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/navigation_distance_unit_margin_left"
+                        android:layout_marginRight="@dimen/navigation_distance_unit_margin_left"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/navigation_distance_unit_size"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/status_bar_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="@dimen/status_bar_margin_left"
+                    android:layout_marginTop="@dimen/status_bar_margin_top"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.android.systemui.statusbar.TicautoSignalClusterView
+                        android:id="@+id/ticauto_signal_cluster"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/status_bar_icon_height" />
+
+                    <TextView
+                        android:id="@+id/current_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/time_margin_left"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/music_name_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/music_info_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/status_bar_margin_top"
+                    android:layout_marginRight="@dimen/status_bar_margin_left"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/music_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/signal"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/music_name_size"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/music_icon"
+                        android:layout_width="@dimen/navigation_icon_size"
+                        android:layout_height="@dimen/navigation_icon_size"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/music_icon_margin_left"
+                        android:scaleType="center"
+                        android:src="@drawable/anim_ambient_music_playing"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <include
+            android:id="@+id/qs_bar"
+            layout="@layout/ticauto_qs_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</com.android.systemui.statusbar.TicautoStatusBarView>
