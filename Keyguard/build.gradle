@@ -16,10 +16,10 @@ android {
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']
-            resources.srcDirs = ['src']
-            aidl.srcDirs = ['src']
-            renderscript.srcDirs = ['src']
+//            java.srcDirs = ['src']
+//            resources.srcDirs = ['src']
+//            aidl.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
        	 }
@@ -27,5 +27,6 @@ android {
 }
 
 dependencies {
+    provided files('libs/settingsLib.jar')
     provided files("${projectDir}/libs/framework.jar")
 }

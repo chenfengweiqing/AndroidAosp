@@ -106,7 +106,7 @@ public class KeyguardSimPukView extends KeyguardPinBasedInputView {
                     msg = R.string.kg_invalid_confirm_pin_hint;
                 }
             }
-            resetPasswordText(true);
+            resetPasswordText(true /* animate */, true /* announce */);
             if (msg != 0) {
                 mSecurityMessageDisplay.setMessage(msg, true);
             }
@@ -140,6 +140,12 @@ public class KeyguardSimPukView extends KeyguardPinBasedInputView {
         }
     }
 
+    @Override
+    protected int getPromtReasonStringRes(int reason) {
+        // No message on SIM Puk
+        return 0;
+    }
+
     private String getPukPasswordErrorMessage(int attemptsRemaining) {
         String displayMessage;
 
@@ -157,6 +163,7 @@ public class KeyguardSimPukView extends KeyguardPinBasedInputView {
         return displayMessage;
     }
 
+    @Override
     public void resetState() {
         super.resetState();
         mStateMachine.reset();
@@ -236,6 +243,7 @@ public class KeyguardSimPukView extends KeyguardPinBasedInputView {
                     Log.v(TAG, "supplyPukReportResult returned: " + result[0] + " " + result[1]);
                 }
                 post(new Runnable() {
+                    @Override
                     public void run() {
                         onSimLockChangedResponse(result[0], result[1]);
                     }
@@ -243,6 +251,7 @@ public class KeyguardSimPukView extends KeyguardPinBasedInputView {
             } catch (RemoteException e) {
                 Log.e(TAG, "RemoteException for supplyPukReportResult:", e);
                 post(new Runnable() {
+                    @Override
                     public void run() {
                         onSimLockChangedResponse(PhoneConstants.PIN_GENERAL_FAILURE, -1);
                     }
@@ -310,13 +319,16 @@ public class KeyguardSimPukView extends KeyguardPinBasedInputView {
 
         if (mCheckSimPukThread == null) {
             mCheckSimPukThread = new CheckSimPuk(mPukText, mPinText, mSubId) {
+                @Override
                 void onSimLockChangedResponse(final int result, final int attemptsRemaining) {
                     post(new Runnable() {
+                        @Override
                         public void run() {
                             if (mSimUnlockProgressDialog != null) {
                                 mSimUnlockProgressDialog.hide();
                             }
-                            resetPasswordText(true /* animate */);
+                            resetPasswordText(true /* animate */,
+                                    result != PhoneConstants.PIN_RESULT_SUCCESS /* announce */);
                             if (result == PhoneConstants.PIN_RESULT_SUCCESS) {
                                 KeyguardUpdateMonitor.getInstance(getContext())
                                         .reportSimUnlocked(mSubId);
