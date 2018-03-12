@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidAosp.iml" filepath="$PROJECT_DIR$/AndroidAosp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AndroidAosp.iml" filepath="$PROJECT_DIR$/AndroidAosp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Keyguard/Keyguard.iml" filepath="$PROJECT_DIR$/Keyguard/Keyguard.iml" />
       <module fileurl="file://$PROJECT_DIR$/Keyguard/Keyguard.iml" filepath="$PROJECT_DIR$/Keyguard/Keyguard.iml" />
       <module fileurl="file://$PROJECT_DIR$/SystemUI5/SystemUI5.iml" filepath="$PROJECT_DIR$/SystemUI5/SystemUI5.iml" />
       <module fileurl="file://$PROJECT_DIR$/SystemUI5_1/SystemUI5.iml" filepath="$PROJECT_DIR$/SystemUI5_1/SystemUI5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SystemUI5_1/SystemUI5_1.iml" filepath="$PROJECT_DIR$/SystemUI5_1/SystemUI5_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SystemUI7_1/sysytemui7_1.iml" filepath="$PROJECT_DIR$/SystemUI7_1/sysytemui7_1.iml" />
     </modules>
   </component>
 </project>
